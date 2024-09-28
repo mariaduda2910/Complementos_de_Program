@@ -10,7 +10,7 @@ class Jogo(ABC):
         self.inicializa_tabuleiro()
 
     @abstractmethod
-    def joga_humano(self, jogador, i_lista):
+    def joga_humano(self, jogador):
         """ metodo que solicita ao humano :jogador: a proxima jogada e coloca-a no tabuleiro
         :param jogador: numero do jogador (0 ou 1)
         """
@@ -43,10 +43,10 @@ class Jogo(ABC):
         # escolhe quem joga em primeiro
         jogador = random.randint(0, 1)
         # jogador = 1
-        i_lista = [6, 6, 6, 6, 6, 6]
+
         while True:
             self.mostra_tabuleiro()
-            self.joga_humano(jogador, i_lista)
+            self.joga_humano(jogador)
             if self.terminou():
                 self.mostra_tabuleiro()
                 print(f'o jogador {jogador} ganhou!!')
@@ -59,7 +59,7 @@ class Jogo(ABC):
 
 
 class Galo(Jogo):
-
+    jogo = 4
     def inicializa_tabuleiro(self):
         self.numero_de_jogadas_realizadas = 0  # conta as jogadas, serve para saber se ainda ha jogadas validas
         self.tabuleiro = {(l, c): ' ' for l in range(3) for c in range(3)}  # o tabuleiro e um dicionario!
@@ -116,4 +116,4 @@ class Galo(Jogo):
 
 
 galo = Galo()
-# galo.jogar()
+galo.jogar()

@@ -1,0 +1,46 @@
+#myjogo.kv
+
+<MyJogo>:
+    orientation: "vertical"
+    GridLayout:
+        cols: 2
+        Label:
+            text: "0"
+        Label:
+            text: "0"
+    GridLayout:
+        size_hint: .8,.8
+        size_hint_y: 3
+        pos_hint:{"center_x":0.5, "center_y":0.5 }
+        cols: 3
+        Button:
+            id: botao1
+            text: "1"
+            on_release: root.marcarPosicao()
+        Button:
+            id: botao2
+            text: "2"
+        Button:
+            id: botao3
+            text: "3"
+        Button:
+            id: botao4
+            text: "4"
+        Button:
+            id: botao5
+            text: "5"
+        Button:
+            id: botao6
+            text: "6"
+        Button:
+            id: botao7
+            text: "7"
+        Button:
+            id: botao8
+            text: "8"
+        Button:
+            id: botao9
+            text: "9"
+    GridLayout:
+        cols: 1
+        text: " "

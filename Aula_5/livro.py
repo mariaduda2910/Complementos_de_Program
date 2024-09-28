@@ -57,7 +57,7 @@ class Livro:
 if __name__ == "__main__":
 
     try:
-        livro = Livro("Turma da monica", "Mauricio de souza", 5, "Brasil")
+        livro = Livro("Turma da monica", "Mauricio de souza", 0, "Brasil")
         print(livro)
     except AssertionError as e:
         print(f"Os dados introduzidos não são válidos, pois {e} ")

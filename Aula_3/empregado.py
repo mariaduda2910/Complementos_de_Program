@@ -14,8 +14,7 @@ class Empregado(Pessoa):
     Código do setor: {self.codigo_setor}'''
 
     def calcular_salario_liquido(self):
-
-        return  self.salario_base - (self.imposto * self.salario_base / 100)
+        return self.salario_base - (self.imposto * self.salario_base / 100)
 
 
 if __name__ == "__main__":

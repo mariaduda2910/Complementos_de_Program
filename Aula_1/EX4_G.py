@@ -7,6 +7,6 @@ for i in range(5):
     altura.append(float(input("Qual a altura ?")))
 idade.reverse()
 altura.reverse()
-print(idade,"\n", altura)
+print(idade,"\n",altura)
 for i in range(5):
     print("A idade é ", idade[i], "e a respectiva altura é ",altura[i])

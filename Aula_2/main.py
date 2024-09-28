@@ -154,8 +154,7 @@ def main():
                     pickle.dump(list_of_cars, f)  # dump (envia os dados para o pickle em forma de binário)
             elif op == 16:
                 with open("list_of_cars.pkl", "rb") as f:
-                    list_of_cars = pickle.load(
-                        f)  # load (carrega de volta pra mémoria o qu esta salvo em forma de binário)
+                    list_of_cars = pickle.load(f)  # load (carrega de volta pra mémoria o qu esta salvo em forma de binário)
                 print(list_of_cars)
 
 

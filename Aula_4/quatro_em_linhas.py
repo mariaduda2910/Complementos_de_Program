@@ -4,6 +4,7 @@ from jogo import Jogo
 class QuatroEmLinhas(Jogo):
 
     def inicializa_tabuleiro(self):
+        self.i_lista = [6, 6, 6, 6, 6, 6]
         self.numero_de_jogadas_realizadas = 0  # conta as jogadas, serve para saber se ainda ha jogadas validas
         self.tabuleiro = {(l, c): ' ' for l in range(6) for c in range(6)}
         # print(self.tabuleiro)
@@ -15,22 +16,22 @@ class QuatroEmLinhas(Jogo):
                 print(f'| {self.tabuleiro[(l, c)]} ', end='')
             print('|\n' + 25 * '-')
 
-    def _le_linha_coluna_valida(self, s):
+    def _le_coluna_valida(self):
         """ metodo auxiliar para ler uma posicao que seja 0, 1 ou 2"""
         while True:
-            x = input(s)
+            x = input("coluna?")
             if x in ['0', '1', '2', '3', '4', '5']:
                 return int(x)
 
-    def joga_humano(self, jogador, i_lista):
+    def joga_humano(self, jogador):
         print(f'jogador {jogador} insira a sua jogada')
         while True:
 
             # linha = self._le_linha_coluna_valida('Linha?')
-            coluna = self._le_linha_coluna_valida('Coluna?')
-            linha = i_lista[coluna] - 1
-            i_lista[coluna] = linha
-            print(i_lista)
+            coluna = self._le_coluna_valida()
+            linha = self.i_lista[coluna] - 1
+            self.i_lista[coluna] = linha
+            print(self.i_lista)
             # verifica se a posicao nao esta preenchida, i.e., e valida
             try:
                 if self.tabuleiro[(linha, coluna)] == ' ':
